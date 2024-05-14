@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar Usuario</title>
+</head>
+<body>
+    <h1>Actualizar Usuario</h1>
+    <form action="actualizar_usuario.php" method="POST">
+        <label for="cedula">Cédula:</label>
+        <input type="text" id="cedula" name="cedula" required><br><br>
+        
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre"><br><br>
+        
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido"><br><br>
+        
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" name="correo"><br><br>
+        
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" name="telefono"><br><br>
+        
+        <label for="rol">Rol:</label>
+        <select id="rol" name="rol">
+            <option value="">Seleccione un rol</option>
+            <option value="usuario">Usuario</option>
+            <option value="admin">Admin</option>
+        </select><br><br>
+        
+        <input type="submit" value="Actualizar Usuario">
+    </form>
+</body>
+</html>
