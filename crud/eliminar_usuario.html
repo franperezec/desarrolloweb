@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eliminar Usuario</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Eliminar Usuario</h1>
-    <form action="eliminar_usuario.php" method="POST">
-        <label for="cedula">Cédula:</label>
-        <input type="text" id="cedula" name="cedula" required><br><br>
-        
-        <input type="submit" value="Eliminar Usuario">
-    </form>
+    <div class="container mt-5">
+        <h1 class="text-center">Eliminar Usuario</h1>
+        <form action="eliminar_usuario.php" method="POST">
+            <div class="form-group">
+                <label for="cedula">Cédula:</label>
+                <input type="text" class="form-control" id="cedula" name="cedula" required>
+            </div>
+            <button type="submit" class="btn btn-danger">Eliminar Usuario</button>
+        </form>
+    </div>
 </body>
 </html>
+
