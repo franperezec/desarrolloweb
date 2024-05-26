@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Animales - Conferencia sobre la Vida Silvestre</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="formulario.html">Formulario de Registro</a></li>
+            <li><a href="galeria.html">Galería</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>Galería de Imágenes de Animales</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Explora Nuestra Galería</h2> <!-- Encabezado añadido para la sección -->
+            <div class="carrusel-container">
+                <!-- Carrusel Slides -->
+                <div class="carrusel-slide">
+                    <figure>
+                        <img src="img/eagle.jpg" alt="Águila Calva">
+                        <figcaption>Las águilas calvas (Haliaeetus leucocephalus) pasan los inviernos solas.</figcaption>
+                    </figure>
+                </div>
+                <div class="carrusel-slide">
+                    <figure>
+                        <img src="img/wolf.jpg" alt="Lobo Gris">
+                        <figcaption>El lobo de páramo una especie en peligro de extinción.</figcaption>
+                    </figure>
+                </div>
+                <div class="carrusel-slide">
+                    <figure>
+                        <img src="img/monkey.jpg" alt="Gibón Lar">
+                        <figcaption>Los gibones lar (Hylobates lar) son principalmente monógamos y habitan los bosques húmedos de la línea ecuatorial.</figcaption>
+                    </figure>
+                </div>
+                <!-- Botones de Navegación -->
+                <a class="carrusel-prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="carrusel-next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+        </section>
+        <section class="mt-8 p-5 bg-white shadow-md text-center">
+            <h2>¿Te interesa la conservación de la vida silvestre?</h2>
+            <p>Regístrate para obtener más información y participar en la conferencia.</p>
+            <a href="formulario.html" class="inline-block bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                Registrarse Ahora
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Francisco Arturo Pérez Mogollón</p>
+        <p>Contacto: <a href="mailto:faperez9@utpl.edu.ec">faperez9@utpl.edu.ec</a></p>
+        <address>Universidad Técnica Particular de Loja</address>
+    </footer>
+    <script>
+        // Script de JavaScript para controlar el carrusel
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        function showSlides(n) {
+          let i;
+          let slides = document.getElementsByClassName("carrusel-slide");
+          if (n > slides.length) {slideIndex = 1}    
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";  
+          }
+          slides[slideIndex-1].style.display = "block";  
+        }
+    </script>
+</body>
+</html>

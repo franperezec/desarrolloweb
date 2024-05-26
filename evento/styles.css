@@ -1,0 +1,245 @@
+/* styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #4CAF50;
+}
+
+main {
+    padding: 20px;
+    min-height: 80vh;
+}
+
+article {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+figcaption {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+#oradores {
+    display: flex;
+    flex-wrap: wrap; /* Permitirá que los elementos se envuelvan en la siguiente línea si no hay espacio suficiente */
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px 0;
+}
+
+#oradores article {
+    flex: 1 1 300px; /* Cada artículo puede crecer y encogerse pero no será más pequeño de 300px */
+    margin: 10px; /* Reducimos el margen para dispositivos más pequeños */
+}
+
+#oradores img {
+    width: 100%; /* Ajusta automáticamente al tamaño del contenedor */
+    height: auto;
+    max-width: 100%; /* Hacemos que el máximo ancho de la imagen sea 100% para evitar problemas de tamaño */
+}
+
+@media (max-width: 768px) {
+    #oradores {
+        flex-direction: column; /* Cambiamos la dirección del flex a columna en pantallas pequeñas */
+    }
+
+    #oradores article {
+        flex: 1 1 100%; /* Cada artículo toma el 100% del ancho en pantallas pequeñas */
+    }
+}
+
+
+.event-details {
+    background-color: #f8f8f8; /* Fondo claro para destacar la sección */
+    padding: 20px;
+    text-align: center; /* Centra el texto */
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.event-details h2 {
+    color: #4CAF50; /* Color verde para mantener la coherencia con el tema de la conferencia */
+}
+
+.carrusel-container {
+    max-width: 800px; /* O el ancho máximo que prefieras */
+    margin: auto;
+    position: relative;
+}
+
+.carrusel-slide {
+    display: none; /* Ocultar todas las imágenes inicialmente */
+    width: 100%; /* Hacer que cada imagen ocupe todo el ancho del contenedor */
+}
+
+.carrusel-slide img {
+    width: 100%;
+    height: auto;
+    display: block; /* Asegurar que no hay espacio adicional alrededor de las imágenes */
+}
+
+/* Botones de navegación del carrusel */
+.carrusel-prev, .carrusel-next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.carrusel-next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.carrusel-prev:hover, .carrusel-next:hover {
+    background-color: rgba(0,0,0,1);
+}
+
+/* Estilos generales del formulario */
+form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    form {
+        padding: 1rem;
+        margin: 1rem;
+    }
+}
+
+.tabla-registro {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.tabla-registro td, .tabla-registro th {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+.btn-editar, .btn-eliminar, .btn-finalizar {
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 8px 16px;
+    color: white;
+    background-color: #4CAF50; /* Verde */
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.btn-editar:hover, .btn-finalizar:hover {
+    background-color: #45a049; /* Verde oscuro */
+}
+
+.btn-eliminar {
+    background-color: #f44336; /* Rojo */
+}
+
+.btn-eliminar:hover {
+    background-color: #d32f2f; /* Rojo oscuro */
+}
+
+
