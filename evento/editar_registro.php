@@ -43,7 +43,7 @@
                         }
                         echo "</div>";
                     }
-                    echo "<button type='submit' class='btn btn-secondary'>Actualizar</button>";
+                    echo "<button type='submit' class='btn btn-primary'>Actualizar</button>";
                     echo "</form>";
                 } else {
                     echo "<div class='alert alert-warning'>Registro no encontrado.</div>";
