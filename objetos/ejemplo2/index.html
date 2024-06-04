@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto PHP</title>
+</head>
+<body>
+    <h2>Crear Empleado</h2>
+    <form action="create.php" method="post">
+        <label>Cédula:</label><input type="text" name="cedula" required><br>
+        <label>Nombre:</label><input type="text" name="nombre" required><br>
+        <label>Apellido:</label><input type="text" name="apellido" required><br>
+        <label>Fecha de Nacimiento:</label><input type="date" name="fecha_nacimiento" required><br>
+        <input type="submit" value="Crear">
+    </form>
+
+    <h2>Eliminar Empleado</h2>
+    <form action="delete.php" method="post">
+        <label>ID:</label><input type="text" name="id" required><br>
+        <input type="submit" value="Eliminar">
+    </form>
+</body>
+</html>
