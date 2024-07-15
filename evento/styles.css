@@ -208,38 +208,5 @@ button:hover {
     }
 }
 
-.tabla-registro {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-}
-
-.tabla-registro td, .tabla-registro th {
-    border: 1px solid #ccc;
-    padding: 8px;
-    text-align: left;
-}
-
-.btn-editar, .btn-eliminar, .btn-finalizar {
-    display: inline-block;
-    margin: 10px 5px;
-    padding: 8px 16px;
-    color: white;
-    background-color: #4CAF50; /* Verde */
-    text-decoration: none;
-    border-radius: 4px;
-}
-
-.btn-editar:hover, .btn-finalizar:hover {
-    background-color: #45a049; /* Verde oscuro */
-}
-
-.btn-eliminar {
-    background-color: #f44336; /* Rojo */
-}
-
-.btn-eliminar:hover {
-    background-color: #d32f2f; /* Rojo oscuro */
-}
 
 

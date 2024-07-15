@@ -1,0 +1,60 @@
+# Proteger el archivo .htaccess
+ <Files .htaccess>
+    Order Allow, Deny
+    Deny from all
+</Files>
+
+# Deshabilitar el acceso a los directorios
+Options -Indexes
+
+# Proteger archivos sensibles
+<FilesMatch "\.
+(htaccess|htpasswd|ini|phps|fla|psd|log|tpl|sh|yml|md|twig|lock|json)$">
+    Order Allow, Deny
+    Deny from all
+</FilesMatch>
+
+# Proteger el acceso por direcciones IP a conexion.php
+<Files conexion.php>
+    Order Deny, Allow
+    Deny from all
+    Allow from 192.168.1.6
+</Files>
+ 
+# Deshabilitar la ejecución de scripts en directorios específicos
+<Directory "C:\xampp\htdocs\DESARROLLOWEB\crud">
+    php_flag engine off
+</Directory>
+
+# Evitar la exposición de información del servidor
+ServerSignature Off
+ServerTokens Prod
+
+# Limitar el tamaño de archivos en nuestro proyecto
+php_value upload_max_filesize 1M
+php_value post_max_size 1M
+
+# Proteger contra inyecciones de SQL
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)
+    RewriteRule .* - [F]
+</IfModule>
+
+# Habilitar uso de HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{localhost/desarrolloweb/crud/index.html}%{REQUEST_URL} [R=301, L]
+
+# Prevenir acceso a archivos de configuración del servidor
+<FilesMatch "(^\wp-config\.php|xmlrcp\.php|readme\.html||license\.txt)">
+    Order Deny, Allow
+    Deny from all
+</FilesMatch>
+
+# Gestionar para que se presenten páginas personalizadas
+ErrorDocument 404 /errors/404.html
+ErrorDocument 403 /errors/403.html
+ErrorDocument 500 /errors/500.html
+ErrorDocument 400 /errors/400.html
+ErrorDocument 401 /errors/401.html
